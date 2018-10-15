@@ -1,4 +1,3 @@
-//https://www.hackerearth.com/practice/algorithms/graphs/depth-first-search/practice-problems/algorithm/bishu-and-his-girlfriend/
 #include<bits/stdc++.h>
 #define pf printf
 #define sf scanf
@@ -44,7 +43,7 @@ int main()
 
      z q ; cin>>q;
      z di = INT_MAX;
-     z id;
+     z id=0;
 
      for(z i=1;i<=q;i++)
      {
@@ -54,12 +53,12 @@ int main()
             if(di>vis[aa])
             {
                 di=vis[aa];
-                id=i;
+                id=aa;
             }
 
      }
 
-     cout << id << endl;
+     cout << id+1 << endl;
 
     
 }
