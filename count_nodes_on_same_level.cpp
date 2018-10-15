@@ -24,14 +24,17 @@ void bfs(vector<z> v[],z si,z s,z lev[],z xx)
     
     vis[s]=true;
 
-
+    map<z,z> m;
     while(!q.empty())
         {
             z x = q.front();
-            //cout << x << endl;
-            //cout << lev[x] << endl;
+            // cout << x << endl;
+            // cout << lev[x] << endl;
             le[lev[x]]++;
-            // cout << le[xx] ;
+            m[lev[x]]++;
+            //cout << le[lev[x]] <<endl;
+            
+            // cout << le[] ;
             q.pop();
             for(i=0;i<v[x].size();i++)
             {
@@ -40,13 +43,20 @@ void bfs(vector<z> v[],z si,z s,z lev[],z xx)
                     q.push(v[x][i]);
                     vis[v[x][i]]=true;
                     lev[v[x][i]]=lev[x]+1;
+                   // le[lev[x]]++;
                     
                     //le[ lev[v[x][i]] ]++;
                 }  
             }   
         }
-
-       cout << le[xx] ;
+    
+    // for(i=0;i<10;i++)
+    // cout << le[i] <<endl;
+    
+    // for(i=0;i<10;i++)
+    //     cout << i << " " << m[i] <<endl;
+    
+       cout << m[xx];
 
 
 }
@@ -56,10 +66,11 @@ int main()
     fast;
     z n;
     cin>>n;
+    //n--;
     vector<z> v[n];
     z lev[n]={0};
     z xx ;
-    z k=n;
+    z k=n-1;
     while(k--)
     {
         //pf("enter edges (stop -1 -1)");
